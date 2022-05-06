@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package shared;
+
+option csharp_namespace = "Protobuf.Shared";
+
+message Name {
+  string firstName = 1;
+  string middleName = 2;
+  string lastName = 3;
+}

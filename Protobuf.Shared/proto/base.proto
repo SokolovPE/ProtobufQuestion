@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package base;
+
+option csharp_namespace = "Protobuf.Shared";
+
+import "shared.proto";
+
+message BaseName {
+  shared.Name name = 1;
+}

@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package server;
+
+option csharp_namespace = "Protobuf.Server";
+
+//import "Protobuf.Shared/1.0.0/shared.proto";
+//import "1.0.0/shared.proto";
+
+message SomeMessage {
+  int32 Amount = 1;
+  //shared.Name name = 2;
+}
