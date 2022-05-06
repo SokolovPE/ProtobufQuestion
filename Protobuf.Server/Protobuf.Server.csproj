@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -11,10 +11,11 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Protobuf.Shared.Proto" Version="1.0.0" GeneratePathProperty="true" />
+        <!--<PackageReference Include="Protobuf.Shared" Version="1.0.1" />-->
+        <PackageReference Include="Protobuf.Shared" Version="1.0.1" GeneratePathProperty="true" />
         <Protobuf Include="proto/*.proto" GrpcServices="None" ProtoRoot="proto" />
-        <Protobuf Include="$(PkgProtobuf_Shared_Proto)/*.proto" Link="proto/*.proto" ProtoRoot="Protobuf.Shared.Proto" GrpcServices="Server" />
-        <Protobuf Update="proto\server.proto">
+        <Protobuf Include="$(PkgProtobuf_Shared_Proto)/*.proto" Link="proto/*.proto" ProtoRoot="Protobuf.Shared" GrpcServices="Server" />
+        <Protobuf Update="proto\server.proto" GrpcServices="Server">
           <Access>Public</Access>
           <ProtoCompile>True</ProtoCompile>
           <CompileOutputs>True</CompileOutputs>

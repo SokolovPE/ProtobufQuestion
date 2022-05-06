@@ -3,6 +3,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Version>1.0.1</Version>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,5 +14,9 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <Protobuf Include="proto/*.proto" GrpcServices="None" ProtoRoot="proto" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Protobuf Update="proto\shared.proto" GrpcServices="Both" />
     </ItemGroup>
 </Project>
