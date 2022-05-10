@@ -3,11 +3,22 @@
 # chmod +x build-bash
 echo "Building Protobuf.Shared..."
 
-outputDir="/home/yee/localnuget/"
+# Local NuGet feed
+outputDir="$HOME/localnuget/"
+
+# Local directory with all proto files
+# Required when using JetBrains product to correctly work with .proto files in IDE
+# Set same directory in File -> Settings -> Languages & Frameworks -> Protocol Buffers
+protoStorageDir="$HOME/localprotos/"
 
 # Move to project directory
 cd ..
 
+# Copy protos to local
+mkdir -p "$protoStorageDir"
+cp proto/*.proto "$protoStorageDir"
+cp proto/**/*.proto "$protoStorageDir"
+
 # Build project and pack into NuGet package
 dotnet build -c Release
-nuget pack .nuspec -OutputDirectory $outputDir
+nuget pack .nuspec -OutputDirectory "$outputDir"
