@@ -8,6 +8,7 @@ option csharp_namespace = "Protobuf.Server";
 import "shared.proto";
 
 message SomeMessage {
-  int32 Amount = 1;
+  int32 amount = 1;
   shared.Name name = 2;
+  shared.SomeMore more = 3;
 }

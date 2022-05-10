@@ -11,7 +11,7 @@
             <PrivateAssets>all</PrivateAssets>
             <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
-        <PackageReference Include="Protobuf.Shared.Proto" Version="1.0.2.6" GeneratePathProperty="true" />
+        <PackageReference Include="Protobuf.Shared.Proto" Version="1.0.2.7" GeneratePathProperty="true" />
         <Protobuf Include="proto/*.proto" GrpcServices="None" ProtoRoot="proto;$(PkgProtobuf_Shared_Proto);" />
     </ItemGroup>
 </Project>
