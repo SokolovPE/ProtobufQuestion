@@ -1,7 +1,10 @@
-﻿namespace Protobuf.Server;
+﻿using Protobuf.Shared;
+
+namespace Protobuf.Server;
 
 public class Dummy
 {
-    private Protobuf.Server.SomeMessage Mesage { get; set; }
-    private Protobuf.Shared.Name Name { get; set; }
+    private SomeMessage Message { get; set; }
+
+    public Name Something => Message.Name;
 }

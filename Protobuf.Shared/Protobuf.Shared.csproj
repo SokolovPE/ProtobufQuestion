@@ -3,6 +3,7 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageVersion>1.0.2.4</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -12,5 +13,9 @@
         <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       </PackageReference>
       <Protobuf Include="proto/*.proto" GrpcServices="None" ProtoRoot="proto" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="build" />
     </ItemGroup>
 </Project>

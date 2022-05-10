@@ -9,3 +9,7 @@ message Name {
   string middleName = 2;
   string lastName = 3;
 }
+
+message SomeMore {
+  string OneTwo = 1;
+}

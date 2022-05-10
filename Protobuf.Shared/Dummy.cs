@@ -1,7 +1,9 @@
-﻿namespace Protobuf.Shared;
+﻿using Protobuf.Shared;
+
+namespace Protobuf.Shared;
 
 public class Dummy
 {
-    public Protobuf.Shared.BaseName BasicName { get; set; }
+    public BaseName BasicName { get; set; }
     public string FullName => BasicName.Name.FirstName;
 }

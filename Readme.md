@@ -50,3 +50,34 @@ message SomeMessage {
   shared.Name name = 2;
 }
 ```
+
+### Answer
+
+#### Shared proto project
+In project with shared protos (example:``Protobuf.Shared``) add result ``.dll`` into ``.nuspec``:
+
+```xml
+<file src="bin/Debug/net6.0/*.dll" target="lib/net6.0" />
+```
+
+Now .dll will be packed into NuGet package.
+
+#### Project using shared protos
+In project using shared protos install ``NuGet`` package like this:
+```xml
+<PackageReference Include="Protobuf.Shared.Proto" Version="1.0.2.5" GeneratePathProperty="true" />
+```
+
+Important step:
+
+``GeneratePathProperty`` must be set.
+
+After that, add path of shared protos to ``ProtoRoot`` like this:
+
+```xml
+<Protobuf Include="proto/*.proto" GrpcServices="None" ProtoRoot="proto;$(PkgProtobuf_Shared_Proto);" />
+```
+Now it is possible to import shared protos:
+```protobuf
+import "shared.proto";
+```

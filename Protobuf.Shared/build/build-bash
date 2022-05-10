@@ -1,0 +1,13 @@
+#!/bin/bash
+# Add rights to execute by:
+# chmod +x build-bash
+echo "Building Protobuf.Shared..."
+
+outputDir="/home/yee/localnuget/"
+
+# Move to project directory
+cd ..
+
+# Build project and pack into NuGet package
+dotnet build -c Release
+nuget pack .nuspec -OutputDirectory $outputDir
